@@ -41,11 +41,20 @@ describe "./cartoon_collections.rb" do
         expect(find_valid_calls(["Earth!", "Wind!", "Fire!", "Water!", "Heart!"])).to eq("Earth!")
         expect(find_valid_calls(["Wood!", "Wind!", "Brass!", "Enamel!", "Heart!"])).to eq("Wind!")
       end
-
+      
       it "if no valid planeteer calls are found, returns nil" do
+        small_calls = ["earth", "wind", "fire", "water", "heart"]
+        other_calls = ["plants", "humans", "mushrooms", "brains"]
+        short_calls = ["wood", "moss"]
         expect(find_valid_calls(small_calls)).to be(nil)
         expect(find_valid_calls(short_calls)).to be(nil)
       end
+
+      # it "if no valid planeteer calls are found, returns nil" do
+      #   expect(find_valid_calls(small_calls)).to be(nil)
+      #   expect(find_valid_calls(short_calls)).to be(nil)
+      # end
+      
     end
   end
 end
